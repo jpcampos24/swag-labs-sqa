@@ -1,0 +1,11 @@
+{
+  "name": "swag-labs-automation",
+  "version": "1.0.0",
+  "description": "This project run automation test for swagLabs",
+  "scripts": {
+    "cy:run": "npx cypress run --spec 'cypress/e2e/Login/*'"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
+  }
+}

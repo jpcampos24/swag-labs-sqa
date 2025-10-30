@@ -1,0 +1,9 @@
+{
+    "client":{
+        "firstName": "Juan",
+        "lastName": "Campos",
+        "zipCode": "12345",
+        "creditCard": "SauceCard #31337",
+        "shippingComapny": "FREE PONY EXPRESS DELIVERY!"
+    }
+}
