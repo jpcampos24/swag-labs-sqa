@@ -1,11 +1,11 @@
 export class LoginPage {
 
     sendUsername(username){
-        cy.get('[id="user-name"]').type(username);
+        cy.get('[data-test="username"]').should('be.visible').type(username);
     }
     
     sendPassword(password){
-        cy.get('[id="password"]').type(password);
+        cy.get('[data-test="password"]').should('be.visible').type(password);
     }
 
     clickLoginButton(){

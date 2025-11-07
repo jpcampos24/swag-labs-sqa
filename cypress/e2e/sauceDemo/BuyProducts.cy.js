@@ -11,7 +11,7 @@ import clientData from "../../fixtures/clientData.json"
 import thanksDataInfo from "../../fixtures/thanksDataInfo.json"
 
 describe ('addProduct', () => {
-    
+
     before(() => {
         const loginPage = new LoginPage();
         const homePage = new HomePage();
@@ -26,7 +26,7 @@ describe ('addProduct', () => {
     it('Buy a Prodcut', () => {
         const productsPage = new ProductsPage();
         productsPage.validateProductsPage();
-        productsPage.clickOnProduct(productData.backpack.name);
+        productsPage.clickOnProduct();
         productsPage.validateCartPopUp();
         productsPage.goToCart();
 

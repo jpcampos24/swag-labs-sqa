@@ -18,3 +18,20 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+// Evita que errores JS tempranos corten la prueba mientras diagnosticamos
+Cypress.on('uncaught:exception', () => false);
+
+// Intercepta tanto con dominio absoluto como cuando llega como ruta relativa (/api/...)
+beforeEach(() => {
+  // Con dominio (p.ej. https://events.backtrace.io/...)
+  cy.intercept('POST', '**/events.backtrace.io/**', { statusCode: 204, body: '' });
+
+  // Rutas relativas vistas en tu log
+  cy.intercept('POST', '**/api/unique-events/submit**', { statusCode: 204, body: '' });
+  cy.intercept('POST', '**/api/summed-events/submit**', { statusCode: 204, body: '' });
+
+  // (Opcional) otros terceros típicos
+  cy.intercept('GET',  '**/www.googletagmanager.com/**', { statusCode: 204, body: '' });
+  cy.intercept('POST', '**/google-analytics.com/**',      { statusCode: 204, body: '' });
+  cy.intercept('POST', '**/stats.g.doubleclick.net/**',   { statusCode: 204, body: '' });
+});

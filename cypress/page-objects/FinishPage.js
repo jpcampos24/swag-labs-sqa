@@ -1,7 +1,7 @@
 export class FinishPage{
 
     validateFinishPage(){
-        cy.get('.subheader').should('be.visible');
+        cy.get('.title').should('be.visible');
     }
 
     validateTitle(titleFinish){
